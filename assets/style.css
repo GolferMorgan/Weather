@@ -1,0 +1,31 @@
+header {
+    text-align: center;
+    font-size: 3rem;
+    background-color: blue;
+    color: white;
+    padding: 4rem;
+}
+
+.weather-container {
+    display: flex;
+    justify-content: left;
+    margin: 2rem;
+    width:33%;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.cities {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    border: 2px color black;
+    padding: 2rem;
+}
+
+.search {
+    margin-top: 1rem;
+}

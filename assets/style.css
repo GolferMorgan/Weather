@@ -9,18 +9,14 @@ header {
 .card {
     display: flex;
     margin: 2rem;
-    width: 40%;
+    width: 25%;
     border: 2px solid black;
     border-radius: 15px;
-}
-
-form {
-    max-width: 25%;
     text-align: center;
 }
 
 .row {
-    padding-left: 2rem;
+    padding-left: 1rem;
     padding-right: 2rem;
 }
 
@@ -43,8 +39,6 @@ button {
 }
 
 .location {
-    justify-content: center;
-    align-items: center;
     text-align: center;
     max-width: 30%;
 } 
@@ -53,9 +47,23 @@ h3 {
     border-bottom: 2px solid black;
 }
 
+.today {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: x-large;
+    border: 2px solid black;
+}
+
 .city {
     display: flex;
     width: 60%;
     border: 2px solid black;
     float: right;
+}
+
+.outlook {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: x-large;
+    border: 2px solid black;
 }

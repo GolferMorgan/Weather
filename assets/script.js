@@ -14,15 +14,16 @@ fetch(queryURL)
 //   logs all the data needed for the weather
   .then(function (data) {
     console.log(data)
-    
+    return (data)
   })
   .then(function (data) {
-    for (var i = 0; i < data.length; i++) {
-      var listItem = document.createElement('li');
-      listItem.textContent = data[i].html_url;
-      weather.appendChild(listItem);
-    }
-  });
+    console.log(data.main)
+    return (data.main)
+  })
+  .then(function (data) {
+    console.log(data.wind)
+    return (data.wind)
+  })
 };
 
 fetchButton.addEventListener('click', getApi);

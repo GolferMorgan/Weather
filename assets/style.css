@@ -10,6 +10,7 @@ header {
     display: flex;
     margin: 2rem;
     width: 25%;
+    height: 10rem;
     border: 2px solid black;
     border-radius: 15px;
     text-align: center;
@@ -43,27 +44,40 @@ button {
     max-width: 30%;
 } 
 
-h3 {
+h3{
     border-bottom: 2px solid black;
 }
 
-.today {
-    text-align: center;
-    margin-top: 1rem;
-    font-size: x-large;
-    border: 2px solid black;
+p {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
-.city {
+.card2 {
     display: flex;
+    margin: 2rem;
     width: 60%;
+    height: 10rem;
     border: 2px solid black;
-    float: right;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
 }
 
-.outlook {
+.locations {
+    font-size: 1.5rem;
+    width: 25%;
+    margin: 2rem;
     text-align: center;
-    margin-top: 1rem;
-    font-size: x-large;
+}
+
+.card3 {
+    display: flex;
+    margin: 2rem;
+    width: 60%;
+    height: 20rem;
     border: 2px solid black;
+    border-radius: 15px;
+    text-align: center;
+    justify-content: center;
 }

@@ -9,6 +9,7 @@ var description = document.getElementById("description")
 var search = document.getElementById("btn");
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityEl + "&appid=" + APIKey;
 var units = "imperial";
+var container = document.getElementById("container");
 
 // set up the funtion to grab the api
 function getApi() {
@@ -19,12 +20,17 @@ fetch(queryURL)
 // logs all the data needed for the weather
   .then(function (data) {
     // displays current weather
-    renderCurrentWeather(data).setAttribute("weather")
-    return (data) 
+    renderCurrentWeather(data.weather)
+    console.log(data)
+    return (data.weather) 
   })
 };
 
-function renderCurrentWeather()
+function renderCurrentWeather(data) {
+   weather.innerHTML = weather
+     return (data.weather)
+    
+}
 
 
 // need to add a way to display 5 day outlook

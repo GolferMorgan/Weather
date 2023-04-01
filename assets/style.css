@@ -26,7 +26,7 @@ header {
     text-align: center;
 }
 
-#search {
+#btn {
     margin-top: 1rem;
     justify-content: center;
     align-items: center;
@@ -53,7 +53,7 @@ p {
     font-weight: bold;
 }
 
-.card2 {
+.container {
     display: flex;
     margin: 2rem;
     width: 60%;
@@ -71,13 +71,6 @@ p {
     text-align: center;
 }
 
-.card3 {
-    display: flex;
-    margin: 2rem;
-    width: 60%;
-    height: 20rem;
-    border: 2px solid black;
-    border-radius: 15px;
-    text-align: center;
-    justify-content: center;
+.outlook {
+    height: 30rem;
 }

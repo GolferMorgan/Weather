@@ -33,12 +33,13 @@ fetch(queryURL)
 });
 }
 
-
+// current weather
 function renderCurrentWeather(data) {
    weather.innerHTML = data.weather[0].description
      return (data);
 }    
 
+// current wind
 function renderWind(data) {
   wind.innerhtml = data.main[0]
   return (data.main);

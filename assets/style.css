@@ -32,8 +32,7 @@ header {
     margin-top: 1rem;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    
+    text-align: center; 
 }
 
 button {
@@ -57,18 +56,23 @@ p {
 
 .container {
     display: flex;
-    margin: 2rem;
+    margin-left: 2rem;
+    margin-top: 2rem;
     width: 60%;
-    height: 10rem;
+    height: 12rem;
     border: 2px solid black;
     border-radius: 15px;
     text-align: center;
     justify-content: center;
 }
 
+h4 {
+    border-bottom: 2px solid black;
+}
+
 .container2 {
     display: flex;
-    margin: 2rem;
+    margin: 1rem;
     width: 60%;
     height: 10rem;
     border: 2px solid black;

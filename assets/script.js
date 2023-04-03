@@ -60,7 +60,6 @@ function getForecast() {
    return (response.json());
   })
    .then(function (data) {
-    
    renderForecast(data)
    console.log(data)
    var time = data.list.dt_txt
@@ -74,11 +73,11 @@ function getForecast() {
   }
     
 function renderForecast(data) {
-   forecastIcon.innerHTML = list.icon
-   forecastWind.innerHTML = list.wind.speed
-   forecastWeather.innerHTML = list.weather[1]
-   forecastHumid.innerHTML = list.humidity
-   forecastTemp.innerHTML = list.temp
+   forecastIcon.innerHTML = icon
+   forecastWind.innerHTML = wind.speed
+   forecastWeather.innerHTML = weather[1]
+   forecastHumid.innerHTML = humidity
+   forecastTemp.innerHTML = temp
    return (data);
   }
 

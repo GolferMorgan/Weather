@@ -7,6 +7,12 @@ var humidity = document.getElementById("humidity")
 var wind = document.getElementById("wind")
 var weather = document.getElementById("weather")
 var outlook = document.getElementById("outlook")
+var forecastWeather = document.getElementById("forecast-weather")
+var forecastWind = document.getElementById("forecast-wind")
+var forecastHumid = document.getElementById("forecast-humidity")
+var forecastTemp = document.getElementById("forecast-temp")
+var forecastIcon = document.getElementById("forecast-icon")
+var lat; var lon; 
 var search = document.getElementById("btn");
 var units = "imperial";
 var locations = []
@@ -32,8 +38,11 @@ fetch(queryURL)
   weather.innerHTML = data.weather[0].description
   humidity.innerHTML = data.main.humidity
   temp.innerHTML = data.main.temp
+  lon = data.coord.lon
+  lat = data.coord.lat
   document.querySelector(".city").innerText = name
   document.querySelector("#icon").src = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+  getForecast()
   });
 
 // current weather
@@ -43,35 +52,37 @@ function renderWeather(data) {
 }    
 }
 
-// function getForecast() {
-//    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={APIKey}";
-//    fetch(forecastURL)
-//    .then (function (response) {
-//    return (response.json());
-//   })
-//    .then(function (data) {
-//    renderForecast(data)
-//    console.log(data)
-//    return (data)
-//   })
-//   }
+// data for forecsat outlook
+function getForecast() {
+   var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey;
+   fetch(forecastURL)
+   .then (function (response) {
+   return (response.json());
+  })
+   .then(function (data) {
     
-// function renderForecast(data) {
-//   var outlook = getElementById("outlook")
-//    outlook.innerHTML = data[0].description
-//    return (data);
-//   }
+   renderForecast(data)
+   console.log(data)
+   var time = data.list.dt_txt
+   for(var i = 0; i < time.length; i++) { 
+    console.log(time[15].dt_txt)
+     if(time.length == "15:00:00")
+     return(data)
+   }
+   return (data)
+  })
+  }
+    
+function renderForecast(data) {
+   forecastIcon.innerHTML = list.icon
+   forecastWind.innerHTML = list.wind.speed
+   forecastWeather.innerHTML = list.weather[1]
+   forecastHumid.innerHTML = list.humidity
+   forecastTemp.innerHTML = list.temp
+   return (data);
+  }
+
   
-
-// function renderCurrentWeather(data) {
-//   temp.innerHTML = data[3]
-//   return (data.main);
-// }
-
-// need to add a way to display 5 day outlook
-
-
-
 
 // need to add the searched locations under previous locations tab
 function appendSearchHistory() {
@@ -85,7 +96,8 @@ function appendSearchHistory() {
 function getSearchHistory() {
 
 }
+var locations = document.querySelector(".search")
 
 // added event listerner to the search button 
 search.addEventListener('click', getApi);
-localStorage.setItem("btn", input-bar)
+// localStorage.setItem("btn", input-bar)

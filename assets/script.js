@@ -42,8 +42,9 @@ function getApi() {
       humidity.innerHTML = data.main.humidity;
       temp.innerHTML = data.main.temp;
       document.querySelector(".city").innerText = name;
-      document.querySelector("#icon").src =
-        "https://openweathermap.org/img/wn/" + icon + "@2x.png";
+      document.querySelector(
+        "#icon"
+      ).src = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
       getForecast();
     });
 
@@ -90,9 +91,52 @@ function renderForecast(dailyForecast) {
 
   for (var i = 0; i < dailyForecast.length; i++) {
     if (dailyForecast[i].dt >= startDt && dailyForecast[i].dt < endDt) {
-      if (dailyForecast[i].dt_txt.slice(11, 13) == "12");
+      if (dailyForecast[i].dt_txt.slice(11, 13) == "12") {
+        forecastCard(dailyForecast[i]);
+      }
     }
   }
+}
+
+function forecastCard(forecast) {
+  // variables
+
+  // iconUrl
+  var iconUrl = `https://openweathermap.org/img/w/${forecast.weather[0].icon}.png`;
+  // iconDescription
+  var iconDesc = forecast.weather[0].description;
+  // temp
+  var foreTemp = forecast.main.temp;
+  // humidity
+  var foreHumid = forecast.main.humidity;
+  // speed
+  var foreWind = forecast.wind.speed;
+
+  // create elements
+
+  // card - div
+  var card = document.createElement("div");
+  var column = document.createElement("div");
+  var body = document.createElement("div");
+  var t = document.createElement("p");
+  var h = document.createElement("p");
+  var w = document.createElement("p");
+
+  //  append created elements
+  column.append(card);
+  card.append(body);
+  cardBody.append(t, h, w);
+
+  // classList.add
+  // setAttribute
+  // textContent
+  // setAttribute for icons
+  // use textocontent to fill everyting created with the api
+  t.textContent = `${foreTemp}`;
+  h.textContent = `${foreHumid}`;
+  w.textContent = `${foreWind}`;
+  // appending column to container for forecast
+  forecastContainer.append(column);
 }
 
 // need to add the searched locations under previous locations tab
